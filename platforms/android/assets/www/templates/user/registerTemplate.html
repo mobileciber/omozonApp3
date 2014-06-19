@@ -1,0 +1,69 @@
+<div data-role="content">
+	<div id="err_registrationFailed" class="alert alert-error"></div>
+          <form id="registerForm" action="#register" class="form-horizontal" autocomplete="off">
+		<div class="control-group">
+			<label class="control-label" for="user">Benutzername</label>
+			<div class="controls">
+				<input type="text" id="user" value="" placeholder="Benutzername">
+			</div>
+			<div id="err_id" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="password">Passwort</label>
+			<div class="controls">
+				<input type="password" id="password" value="" placeholder="Passwort">
+			</div>
+			<div id="err_password" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="repeatPassword">Passwort wiederholen</label>
+			<div class="controls">
+				<input type="password" id="repeatPassword" value="" placeholder="Passwort wiederholen">
+			</div>
+			<div id="err_repeatPassword" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="email">E-Mail</label>
+			<div class="controls">
+				<input type="email" id="email" value="" placeholder="E-Mail">
+			</div>
+			<div id="err_email" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			Adresse:
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Vor- und Zuname:</label>
+			<div class="controls">
+				<input type="text" id="name" value="" placeholder="Vor- und Zuname">
+			</div>
+			<div id="err_name" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="street">Stra�e / Hausnr.:</label>
+			<div class="controls">
+				<input type="text" id="street" value="" placeholder="Stra�e / Hausnr.">
+			</div>
+			<div id="err_street" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="zip">PLZ:</label>
+			<div class="controls">
+				<input type="text" id="zip" value="" placeholder="PLZ">
+			</div>
+			<div id="err_zip" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="city">Stadt:</label>
+			<div class="controls">
+				<input type="text" id="city" value="" placeholder="Stadt">
+			</div>
+			<div id="err_city" class="alert alert-error" />
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn" id="registerButton">registrieren</button>
+			</div>
+		</div>
+	</form>
+</div>

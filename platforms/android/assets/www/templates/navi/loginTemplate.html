@@ -1,0 +1,26 @@
+        <div data-role="content">
+			<div id="err_loginFailed" class="alert alert-error"></div>
+			<form id="loginForm" action="#login" class="form-horizontal" autocomplete="off">
+				<div class="control-group">
+					<label class="control-label" for="inputUser">Benutzername</label>
+					<div class="controls">
+						<input type="text" id="inputUser" value="" placeholder="Benutzername">
+					</div>
+					<div id="err_inputUser" class="alert alert-error" />
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">Passwort</label>
+					<div class="controls">
+						<input type="password" id="inputPassword" value="" placeholder="Passwort">
+					</div>
+					<div id="err_inputPassword" class="alert alert-error" />
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn" id="loginButton">Sign in</button>
+					</div>
+				</div>
+			</form>
+			<a href="#register" data-ajax="false">Registrierung</a><br />
+	    	<a href="#passwdForgotten" data-ajax="false">Passwort vergessen?</a>
+        </div>

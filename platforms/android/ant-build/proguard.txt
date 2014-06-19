@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class de.ciber.mobile.html5.app.OmozonApp3 { <init>(...); }
+

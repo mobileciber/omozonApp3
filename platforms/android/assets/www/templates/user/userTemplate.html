@@ -1,0 +1,86 @@
+<div class="main">
+    <div class="container">
+        <header>
+            <h3>Register</h3>
+        </header>
+        
+        <div>
+        	<form  name="registerForm" class="register-form">
+        		<table border="0">
+        			<thead>
+        				<tr>
+        					<td colspan="2">einfach ausfüllen und los geht's...</td>
+        				</tr>
+        			</thead>
+        			<tbody>
+        				<tr>
+        					<td>Benutzername:</td>
+        					<td>
+        						<input type="text" name="username" ng-model="user.username" required="required" /><br/>
+        						<span class="error" ng-show="registerForm.username.$error.required">Feld 'Benutzername' bitte ausfüllen</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>Passwort:</td>
+        					<td>
+        						<input type="text" ng-model="user.passwd" required="required" /><br/>
+        						<span class="error" ng-show="registerForm.passwd.$error.required">Feld 'Passwort' bitte ausfüllen</span>
+        						<!--input type="password" ng-model="user.passwd" equals="{{user.passwdRepeat}}" required-->
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>Passwort wiederholen:</td>
+        					<td>
+        						<input type="text" ng-model="user.passwdRepeat" required="required"/><br/>
+        						<span class="error" ng-show="registerForm.passwdRepeat.$error.required">Feld 'Passwort wiederholen' bitte ausfüllen</span>
+        						<!--input type="password" ng-model="user.passwdRepeat" equals="{{user.passwd}}" required-->
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>E-Mail:</td>
+        					<td>
+        						<input type="email" ng-model="user.email" required="required"/><br />
+        						<span class="error" ng-show="registerForm.email.$error.required">Feld 'E-Mail' bitte aufüllen</span>
+        						<span class="error" ng-show="registerForm.email.$error.email">Keine gültige E-Mail Adresse</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td colspan="2">Adresse:</td>
+        				</tr>
+        				<tr>
+        					<td>Vor- und Zuname:</td>
+        					<td>
+        						<input type="text" ng-model="user.name" required="required"/><br />
+        						<span class="error" ng-show="registerForm.name.$error.required">Feld 'Vor- und Zuname' bitte aufüllen</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>Straße / Hausnr.:</td>
+        					<td>
+        						<input type="text" ng-model="user.street" required="required"/><br />
+        						<span class="error" ng-show="registerForm.street.$error.required">Feld 'Straße / Hausnr.' bitte aufüllen</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>PLZ</td>
+        					<td>
+        						<input type="text" ng-model="user.zip" required="required"/><br />
+        						<span class="error" ng-show="registerForm.zip.$error.required">Feld 'PLZ' bitte aufüllen</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>Stadt:</td>
+        					<td>
+        						<input type="text" ng-model="user.city" required="required"/><br />
+        						<span class="error" ng-show="registerForm.city.$error.required">Feld 'Stadt' bitte aufüllen</span>
+        					</td>
+        				</tr>
+        			</tbody>
+        		</table>
+        		<button ng-click="reset()">RESET</button>
+        		<button ng-click="register(user)">Anmelden</button>
+        	</form>
+        	{{registerNotification}}
+        </div>
+	</div>
+</div>
