@@ -1,0 +1,10 @@
+#map-loading{
+	background-color: #ddd;
+	background-image: url(images/ajax-loader2.gif);
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 999999;
+}

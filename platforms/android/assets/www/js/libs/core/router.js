@@ -39,7 +39,7 @@ define([
 		  MyOmozonCoinsView,MyOmozonProfileView,MyOmozonPurchasesView,MyOmozonStoresView,MyOmozonView,MyOmozonVoucherView,
 		  MyOmozonWalletView,MyOmozonWishlistView,ProductDetailsQRView,ProductDetailsView,ProductSearchResultView,ProductSearchView,
 		  ProductsListView,ProductsView,OnlineshopView,StoreDetailsView,StoreListView,StoreOfferListView,
-		  StoreOffersView,StoresView,UserListView,UserView,UserModel, LoginFormModel) {
+		  StoreOffersView,StoresView,UserListView,UserView,UserModel,LoginFormModel) {
 	'use strict';
   
 	var appRouter = Backbone.Router.extend({
@@ -54,7 +54,7 @@ define([
 	    	    'reset':'passwdForgotten',
 	    	    "stores":"stores",
 		        "storeList":"storeList",
-		        "storeDetails":"storeDetails",
+		        "storeDetails:storeId":"storeDetails",
 		        "storeOffers":"storeOffers",
 		        "storeOfferList":"storeOfferList",
 		        "productDetails":"productDetails",
@@ -120,7 +120,6 @@ define([
 	  stores:function () {
 	      console.log('#stores');
 	      this.changePage(new StoresView());
-	      
 	  },
 	  
 	  storeList:function () {
@@ -129,10 +128,10 @@ define([
 	      
 	  },
 	  
-	  storeDetails:function () {
-	      console.log('#storeDetails');
-	      this.changePage(new StoreDetailsView());
-	      
+	  storeDetails:
+		  function (storeId) {
+	        console.log('#storeDetails/' + storeId);
+	        this.changePage(new StoreDetailsView({storeId: storeId}));
 	  },
 	
 	  storeOffers:function () {

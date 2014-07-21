@@ -18,6 +18,7 @@ define([
 			this.subviews.headerView = new HeaderView("Login");
 			this.subviews.footerView = new FooterView("Login");
 
+			// "Uncaught TypeError: Cannot call method 'bind' of undefined"
 		    Backbone.Validation.bind(this, {
 		    		valid: function(view, attr) {
 		        		$('#err_' + attr).html('').hide();
@@ -43,12 +44,12 @@ define([
 	    	
 	    	this.model.set({inputUser: $('#inputUser').val(), inputPassword: $('#inputPassword').val()});
 	    	
-	    	if (this.model.isValid()) {
+//	    	if (this.model.isValid()) {
 	    		//alert("Validation successful... You can invoke some serverside login!");
 	    		this.performLogin(this.model.get("inputUser"), this.model.get("inputPassword"), self);
-	    	} else{
-	    		e.preventDefault(); // stops further event propagation
-	    	}
+//	    	} else{
+//	    		e.preventDefault(); // stops further event propagation
+//	    	}
 	    },
 	    
 	    performLogin: function(username, password){

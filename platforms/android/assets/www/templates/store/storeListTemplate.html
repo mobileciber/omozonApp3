@@ -3,11 +3,17 @@
             <h1>Filialsuchergebnisse</h1>
         </div> -->
 
-        <div data-role="content">
+        <!-- <div data-role="content">
             <p>This is Page "Filialsuchergebnisse". It was created dynamically using an underscore.js template.</p>
             <p>Navigate to:</p>
             <ul data-role="listview" data-inset="true">
                 <li><a href="#stores">Filial Radar</a></li>
 				<li><a href="#storeDetails">Filialseite</a></li>
             </ul>
-        </div>
+        </div> -->
+
+<a href="#storeDetails_<%= id %>" data-ajax="false">	
+	<span class="storeCity heading"><%= city %><span>
+	<br/>
+	<span class="storeStreet text"><%= street %></span>
+</a>

@@ -1,10 +1,17 @@
-var StoresCollection = Backbone.Collection.extend({
-	url: omozonAppConfig.backendApiUrl + '/stores',
-	model: Store,
-
-//	localStorage: new Backbone.LocalStorage("omozon-stores"),
-	
-	initialize: function(){
-		console.log("Stores collection initialize");
-	}
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'models/store/StoreModel'
+  ], function($, _, Backbone, StoreModel){
+		var StoresCollection = Backbone.Collection.extend({
+			url: omozonAppConfig.backendApiUrl + '/stores',
+			model: StoreModel,
+  	    
+			initialize: function(){
+				console.log("Stores collection initialize");
+			}
+  	  	});
+  	 
+	 return StoresCollection;
 });

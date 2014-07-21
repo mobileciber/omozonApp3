@@ -5,8 +5,8 @@ define([
   'views/BaseView',
   'views/navi/HeaderView',
   'views/navi/FooterView',
-  'text!templates/store/storeTemplate.html'
-], function($, _, Backbone, BaseView, HeaderView, FooterView, storeTemplate){
+  'views/store/StoreListItemView'
+], function($, _, Backbone, BaseView, HeaderView, FooterView, StoreListItemView){
 
 	window.StoresCollectionView = Backbone.View.extend({
 		tagName: "ul",
@@ -19,7 +19,7 @@ define([
 		render: function(){
 			console.log("StoresCollectionView render");
 			this.collection.each(function(store){
-				var storeView = new StoreView({ model: store});
+				var storeView = new StoreListItemView({ model: store});
 				var elHelp = storeView.render().el;
 				this.$el.append(elHelp);
 			}, this);

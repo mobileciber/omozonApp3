@@ -20,27 +20,51 @@ require.config({
 		'jqm-config':			'libs/jquery/jqm-config',
 		'templates': 			'../templates',
 		'app':					'libs/core/app',
-		'router':				'libs/core/router'
+		'router':				'libs/core/router',
+		'google-maps-loader':	'libs/core/google-maps-loader',
+		'omozon-maps':			'maps/maps'
     },
  
-    priority: ['jquery', 'jquery-mobile']
+    priority: ['config', 'jquery', 'jquery-mobile', 'backbone', 'google-maps-loader']
  
 });
 
 
 
-define(['jquery', 'underscore', 'backbone', 'jqm-config', 'interceptor', 'router',
-      'jquery-mobile', 'jquery-session', 'backbone-basicauth', 'backbone-validation', 'backbone-stickit', 'gserializer' ], 
-      function($, _, Backbone, JQMConfig, Interceptor, Router) {
-  $(document).ready(function() {
-    console.log("document ready");// Handler for .ready() called.
-//    App.initialize();
-    console.log("Router creating");
-	var appRouter=new Router();
-	Backbone.history.start();
-	console.log("Router" + appRouter + " created and started");
-    
-  });   
-  
-
-});
+define(['jquery', 'underscore', 'backbone', 'jqm-config', 'interceptor', 'router', 'google-maps-loader',
+      'jquery-mobile', 'jquery-session', 'backbone-basicauth', 'backbone-validation', 'backbone-stickit', 'gserializer', 'omozon-maps'], 
+      function($, _, Backbone, JQMConfig, Interceptor, Router, GoogleMapsLoader) {
+		  
+//		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//			document.addEventListener("deviceready", onDeviceReady, false);
+//		}
+//		else{
+//			initBackboneApp();
+//		}
+//		function onDeviceReady(){
+//			initBackboneApp();
+//		}
+		initBackboneApp();
+		function initBackboneApp(){
+			GoogleMapsLoader.done(function(GoogleMaps){
+				  
+				  console.log("Google Maps API loaded successfully!");
+				  $(document).ready(function() {
+					  console.log("document ready");// Handler for .ready() called.
+					  //    App.initialize();
+					  console.log("Router creating");
+					  var appRouter=new Router();
+					  Backbone.history.start();
+					  console.log("Router" + appRouter + " created and started");
+				    
+					  // Declare some global variables
+					  var directionsDisplay;
+					  var directionsService = new google.maps.DirectionsService();
+					  var map;
+					  var Stores;
+				  });
+			  }).fail(function(){
+				  	console.error("ERROR: Could not load Google Maps API");
+			  }); 
+		}
+	  });

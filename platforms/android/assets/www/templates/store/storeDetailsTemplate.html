@@ -1,7 +1,36 @@
-        <div data-role="content">
+<!--         <div data-role="content">
             <p>This is Page "Filialseite". It was created dynamically using an underscore.js template.</p>
             <p>Navigate to:</p>
             <ul data-role="listview" data-inset="true">
                 <li><a href="#storeList" data-ajax="false">Filialsuchergebnisse</a></li>
             </ul>
-        </div>
+        </div> -->
+        
+<div data-role="content">
+	<div class="storeItemDetails">
+			<div id="map-loading"></div>
+			<div id="map-canvas" style="width:100%;height:300px"></div>
+			<div class="content-box">
+				<button id="get-directions">Get directions</button>
+			</div>
+			<div class="content-box" style="display:none;">
+				<button id="hide-directions">Hide directions</button>
+			</div>
+			<div class="bgPurple content-box text">
+				<span class="heading"><%= city %>, <%= zipCode %></span>
+				<br />
+				<span class="text"><%= street %></span>
+			</div>
+			<div class="openingTimes bgLightGrey content-box text">
+				<span>Mo-Fr <%= openingTimesMoFr %></span>
+				<br />
+				<span>Sa <%= openingTimesSa %></span>
+
+				<br />
+				<span>Latitude: <%= latitude %></span>
+				<br />
+				<span>Longitude <%= longitude %></span>
+
+			</div>
+		</div>
+</div>
